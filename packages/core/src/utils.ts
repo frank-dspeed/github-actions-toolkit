@@ -4,7 +4,6 @@
 import {AnnotationProperties} from './core'
 import {CommandProperties,issueCommand} from './command'
 
-
 /**
  * Registers a secret which will get masked from logs
  * @param secret value of the secret

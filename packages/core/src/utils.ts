@@ -2,7 +2,26 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 import {AnnotationProperties} from './core'
-import {CommandProperties} from './command'
+import {CommandProperties,issueCommand} from './command'
+
+
+/**
+ * Registers a secret which will get masked from logs
+ * @param secret value of the secret
+ */
+
+ export function setSecret(secret: string): void {
+  issueCommand('add-mask', {}, secret);
+}
+
+/**
+ * Writes debug message to user log
+ * @param message debug message
+ */
+
+export function debug(message: string): void {
+  issueCommand('debug', {}, message);
+}
 
 /**
  * Sanitizes an input into a string so it can be passed into issueCommand safely

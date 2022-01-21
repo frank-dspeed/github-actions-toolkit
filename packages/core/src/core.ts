@@ -95,14 +95,6 @@ export function exportVariable(name: string, val: any): void {
 }
 
 /**
- * Registers a secret which will get masked from logs
- * @param secret value of the secret
- */
-export function setSecret(secret: string): void {
-  issueCommand('add-mask', {}, secret)
-}
-
-/**
  * Prepends inputPath to the PATH (for this action and future actions)
  * @param inputPath
  */
@@ -225,14 +217,6 @@ export function setFailed(message: string | Error): void {
  */
 export function isDebug(): boolean {
   return process.env['RUNNER_DEBUG'] === '1'
-}
-
-/**
- * Writes debug message to user log
- * @param message debug message
- */
-export function debug(message: string): void {
-  issueCommand('debug', {}, message)
 }
 
 /**
